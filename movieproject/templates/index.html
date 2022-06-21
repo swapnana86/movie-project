@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<style>
+    .movie_details {
+        overflow: hidden;
+        background-color:red;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        {% for i in movie_key %}
+        <div class="col-sm-3 d-flex align-items-items-stretch">
+            <div class="card" style="width:18rem">
+                <img class="card-img-top" src="{{i.image.url}}" height="200px" width="100px">
+
+        <!--<div class="col-sm-3 d-flex align-items-stretch ">-->
+                <div class="card-body">
+                <h5 class="card-title">{{i.name}}</h5>
+                    <p class="card-text ">{{i.description}}</p>
+                    <a href="{% url 'movieapp:details' i.id %}" class="btn btn-primary">click Here</a>
+                </div></div>
+        <!--</div>-->
+        </div>
+
+
+        {% endfor %}
+    </div>
+
+{% endblock %}
+<!--style="width: 18rem;movie_details
+
+
+<img src="{{ i.image.url}}" width="100" height="100">
+<a href="{% url 'movieapp:details' i.id %}">{{i.name}}</a> <br>
+
+
+
+
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>MovieName</th>
+        <th>Description</th>
+        <th>Year</th>
+    </tr>
+    {% for i in movie_key %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.description}}</td>
+        <td>{{i.year}}</td>
+    </tr>
+    {% endfor %}
+</table>-->

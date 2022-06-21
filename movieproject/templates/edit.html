@@ -1,0 +1,6 @@
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{movie_form_key.as_p}}<br>
+
+    <input type="submit" value="Submit">
+</form>
